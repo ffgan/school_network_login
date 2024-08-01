@@ -1,0 +1,12 @@
+[Unit]
+Description=My Python Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/a/code/school_network/login.py
+WorkingDirectory=/home/a/code/school_network/
+Restart=always
+User=a
+
+[Install]
+WantedBy=multi-user.target

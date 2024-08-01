@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+
+START=99 # 执行的顺序，按照字符串顺序排序并不是数字排序
+STOP=15
+SERVICE=school
+PROG=/root/school_network
+USE_PROCD=1 # 使用procd启动
+
+# start_service 函数必须要重新定义
+start_service() {
+    echo service school start
+    procd_open_instance # 创建一个实例， 在 procd 看来一个应用程序可以多个实例
+    # ubus call service list 可以查看实例
+    procd_set_param command $PROG # mycode执行的命令是"/app/mycode"， 若后面有参数可以直接在后面加上
+    procd_set_param respawn       # 定义respawn参数，告知procd当mycode程序退出后尝试进行重启
+    # procd_close_instance # 关闭实例
+}
