@@ -36,10 +36,6 @@ func login() []byte {
 	return body // dr1686920999059({"result":"1","msg":"认证成功"}) 这个result为1即为登陆成功
 }
 
-func hello(w http.ResponseWriter, _ *http.Request) {
-	w.Write(login())
-}
 func main() {
-	http.HandleFunc("/", hello)
-	http.ListenAndServe("0.0.0.0:4431", nil)
+	login()
 }
