@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 基本参照本项目里的Python脚本来写的，只需要安装好wget就行，默认发行版都会带wget
-# 对于刷了openwrt的路由器，cron加一下每天7点执行该脚本即可，可参考 0 7 * * * /root/login.sh
+# 对于刷了openwrt的路由器，cron加一下每天7点执行该脚本即可，可参考 0 7 * * * sh /root/login.sh
 
 
 # 选自己的运营商，中国移动 cmcc 中国电信 telecom 中国联通 unicom 校园网目测是个空串
